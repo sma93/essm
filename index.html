@@ -5,6 +5,8 @@
 
 		<!-- Style -->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   </head>
 
@@ -48,6 +50,44 @@
 		</div>
 
 	  <!-- Main Page Content -->
+		<div class="ui button">
+        Open Modal
+		</div>
+
+		<div class="ui modal">
+  		<i class="close icon"></i>
+			<div class="header">
+				Write a post!
+			</div>
+			<div class="content">
+				<div class="ui form">
+				<h4 class="ui dividing header">Hi there! What's on your mind?</h4>
+				<div class="field">
+					<label>Textbox</label>
+					<textarea></textarea>
+				</div>
+				<div class="field">
+					<div class="ui checkbox">
+						<input type="checkbox" checked="checked" name="contact-me">
+						<label>Make this post public.</label>
+					</div>
+				</div>
+				</div>
+				</div>
+				<div class="actions">
+					<div class="ui button">Cancel</div>
+					<div class="ui green button">Save</div>
+					<div class="ui green button">Submit</div>
+				</div>
+			</div>
+
+			<script>
+			$(document).ready(function() {
+				$('.ui.button').click(function() {
+					$('.ui.modal').modal('show');
+				});
+			});
+			</script>
 
 
 	</body>
