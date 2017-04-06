@@ -23,7 +23,7 @@ def sdb_blog_posts():
 	#for k, v in response.iteritems():
   #  print k, v
 def save_post(title, author, text):
-	etime = time.time()
+	etime = str(time.time())
 	post_id = str(random.randint(1, 1000))
 	s_title = str(title)
 	s_author = str(author)
@@ -57,5 +57,9 @@ def save_post(title, author, text):
 	)
 	return response
 
+def get_posts():
+	resp = client.select(
+		SelectExpression='select * from blog_posts')
+	return resp
 	#read docs for put attrib
 	# send all attributes to simpleDB

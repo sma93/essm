@@ -2,6 +2,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>ESSM - Home</title>
+		<!--link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" /-->
+		<link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
 
 		<!-- Style -->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
@@ -14,31 +17,30 @@
 
   	<!-- Logo -->
 		<div>
-				<a href="index.html">
-					<!--img src="images/logo-placeholder.png" alt="logo image"-->
-					<img src="images/letters.svg" alt="logo image" width="75" height="45">
-				</a>
+			<a href="index.html">
+				<!--img src="images/logo-placeholder.png" alt="logo image"-->
+				<img src="images/letters.svg" alt="logo image" width="75" height="45">
+			</a>
 
   	<!-- Content -->
-		<ul>
-    <div class="ui container">
-		<div class="ui labeled icon small menu">
-			<div class="active teal item">
-				<i class = "home icon"></i>
-				<a href="index.html">Home</a>
-			</div>
-			<div class="item">
-				<i class = "folder open icon"></i>
-				<a href="archives.html">Archives</a>
-			</div>
-			<div class="item">
-				<i class = "heart icon"></i>
-				<a href="about.html">About</a>
-			</div>
-			<div class="item">
-				<i class = "usb icon"></i>
-				<a href="links.html">Links</a>
-			</div>
+		<div class="ui container">
+			<div class="ui labeled icon small menu">
+				<div class="active teal item">
+					<i class = "home icon"></i>
+					<a href="index.html">Home</a>
+				</div>
+				<div class="item">
+					<i class = "folder open icon"></i>
+					<a href="archives.html">Archives</a>
+				</div>
+				<div class="item">
+					<i class = "heart icon"></i>
+					<a href="about.html">About</a>
+				</div>
+				<div class="item">
+					<i class = "usb icon"></i>
+					<a href="links.html">Links</a>
+				</div>
 			<!-- SearchBar in Menubar -->
      	<!--div class="ui right aligned category search item">
       	<div class="ui transparent icon input">
@@ -46,58 +48,72 @@
         <i class="search link icon"></i> -->
       </div>
 			</div>
-		</ul>
-		</div>
-
 	  <!-- Main Page Content-->
-		<button class="ui button", type="button", id="test">
-        Open Modal
-		</button>
-
-		<div class="ui modal test">
-  		<i class="close icon"></i>
-			<div class="header">
-				Write a post!
+			<div class="ui container">
+         <button class="massive ui button", type="button">
+         <i class = "comment outline icon"></i>
+            <a href="post.html">Write a post</a>
+         </button>
 			</div>
-			<div class="content">
-				<div class="ui form">
-				<h4 class="ui dividing header">Hi there! What's on your mind?</h4>
-				<div class="field">
-					<label>Textbox</label>
-					<textarea></textarea>
-				</div>
-				<div class="field">
-					<div class="ui checkbox">
-						<input type="checkbox" checked="checked" name="contact-me">
-						<label>Make this post public.</label>
+			<div class="ui container">
+	     <div class="ui items">
+				<div class="item">
+					<div class="content">
+						<div class="header" id="test-header"></div>
+						<div class="description" id="test-content"></div>
+						<div class="extra" id="author-date"></div>
 					</div>
 				</div>
-				</div>
-				</div>
-				<div class="actions">
-					<div class="ui button">Cancel</div>
-					<div class="ui green button">Save</div>
-					<div class="ui green button" id="my-button">Submit</div>
-				</div>
+			 </div>
 			</div>
+		</div>
+		<script type="text/javascript">
+		$(function(){
+			$("#test").click(function(){
+				$(".test").modal('show');
+			});
+			$(".test").modal({
+				closable: true
+			});
+		});
+		$('#my-button').click(function(){
+			$.post('blog_posts', function(data) {
+					console.log(data);
+			});
+		})
 
-			<script type="text/javascript">
-			$(function(){
-	$("#test").click(function(){
-		$(".test").modal('show');
-	});
-	$(".test").modal({
-		closable: true
-	});
-});
-			$('#my-button').click(function(){
-				$.get('blog_posts', function(data) {
-						console.log(data);
-				});
-			
-			})
-			</script>
+		var dummy_data = {
+			Items: [{
+				Attributes: [{
+					Name: "last-modified",
+					Value: "1489703867.53"
+				}, {
+					Name: "author",
+					Value: "da big boss"
+				}, {
+					Name: "text",
+					Value: "It's a Sunday afternoon, you are sitting at home pondering the question of how does one master the art of self-expression, as usual. You decide that you want to create a website about yourself, because you feel the need to share how excited you get when the food cart comes towards you on an airplane or share how unsustainably nice your handwriting is on the first page of a new notebook. These are things the world deserves to know. Unfortunately, you do not know anything about website design. Words like css and javascript makes you feel like you just want to forget about this whole thing and search up some funny challenge videos on Youtube. Fortunately, your coolest pal E calls you up and by miracle happens to be interested in web design as well. Thus begins the journey of two young souls..."
+				}, {
+					Name: "title",
+					Value: "I want to make a website - the origin story"
+				}]
+			}]
+		}
+		$.get('dummy', function(data) {
+		//$.get('blog_posts', function(data) {
+			console.log(data);
+			data = dummy_data;
+			console.log(data);
 
-
+			var lastModDate = data.Items["0"].Attributes["0"].Value,
+					author = data.Items["0"].Attributes["1"].Value,
+					text = data.Items["0"].Attributes["2"].Value,
+					title = data.Items["0"].Attributes["3"].Value;
+			//display get results on the page
+			$('#test-header').html(title);
+			$('#test-content').html(text);
+			$('#author-date').html('author: ' + author + '</br>last mod: ' + lastModDate);
+		})
+		</script>
 	</body>
 </html>
