@@ -4,24 +4,18 @@ import random
 
 client = boto3.client('sdb')
 
-#create domain, show response
+#TODO:
+#add function to take new domain name as input and create it
+#add fucntion to display current domain info
+#add function to delete domain by name
+#in test script, add a fucntion that calls the above in sequence
 
-#commented out because the domain already exists
-
-#print("test - creating blog_posts domain")
-#response = client.create_domain(
-#    DomainName='blog_posts'
-#)
-#print response
-
-#wait 10 seconds, try to get domain metadata
 def sdb_blog_posts():
 	response = client.domain_metadata(
 		DomainName='blog_posts'
 	)
 	return response
-	#for k, v in response.iteritems():
-  #  print k, v
+
 def save_post(title, author, text):
 	etime = str(time.time())
 	post_id = str(random.randint(1, 1000))
@@ -61,5 +55,3 @@ def get_posts():
 	resp = client.select(
 		SelectExpression='select * from blog_posts')
 	return resp
-	#read docs for put attrib
-	# send all attributes to simpleDB

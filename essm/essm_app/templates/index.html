@@ -2,9 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>ESSM - Home</title>
-		<!--link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" /-->
-		<link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
+		<link rel="icon" type="image/png" href="/static/essm_app/favicon.ico" sizes="16x16" />
 
 		<!-- Style -->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
@@ -14,12 +12,10 @@
   </head>
 
 	<body>
-
   	<!-- Logo -->
 		<div>
 			<a href="index.html">
-				<!--img src="images/logo-placeholder.png" alt="logo image"-->
-				<img src="images/letters.svg" alt="logo image" width="75" height="45">
+				<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
 			</a>
 
   	<!-- Content -->
@@ -41,32 +37,27 @@
 						<i class = "usb icon"></i>
 						<a href="links.html">Links</a>
 					</div>
-				<!-- SearchBar in Menubar -->
-					<!--div class="ui right aligned category search item">
-					<div class="ui transparent icon input">
-	        <input class="prompt" type="text" placeholder="Search...">
-	        <i class="search link icon"></i> -->
 	      </div>
 			</div>
 	  <!-- Main Page Content-->
 			<div class="ui main text container">
 				<p></p><p></p> <!--TODO: change css to add margin-->
-	     <div class="ui items">
-				<div class="item">
-					<div class="content">
-						<div class="header" id="test-header"></div>
-						<div class="description" id="test-content"></div>
-						<div class="extra" id="author-date"></div>
+				<div class="ui items">
+					<div class="item">
+						<div class="content">
+							<div class="header" id="test-header"></div>
+							<div class="description" id="test-content"></div>
+							<div class="extra" id="author-date"></div>
+						</div>
 					</div>
 				</div>
-			 </div>
 			</div>
 			<div class="ui container">
 				<p></p>
-         <button class="massive ui button", type="button">
-         <i class = "comment outline icon"></i>
-            <a href="post.html">Write a post</a>
-         </button>
+        <button class="massive ui button", type="button">
+					<i class = "comment outline icon"></i>
+          <a href="post.html">Write a post</a>
+        </button>
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -102,6 +93,7 @@
 			}]
 		}
 		$.get('dummy', function(data) {
+			//TODO: create separate templates/urls for testing with/without actual db calls
 		//$.get('blog_posts', function(data) {
 			console.log(data);
 			data = dummy_data;
@@ -112,6 +104,7 @@
 					text = data.Items["0"].Attributes["2"].Value,
 					title = data.Items["0"].Attributes["3"].Value;
 			//display get results on the page
+			//TODO: do not display rest of page until this is ready...remove jarring UI somehow
 			$('#test-header').html(title);
 			$('#test-content').html(text);
 			$('#author-date').html('author: ' + author + '</br>last mod: ' + lastModDate);

@@ -4,10 +4,9 @@ from django.http import HttpResponse #used for tutorial
 from django.http import JsonResponse
 import sdbee
 
-# Create your views here.
+#TODO: add views for the other static html pages (about, archive etc)
 def index(request):
 	return render(request, "index.html", {})
-	#return HttpResponse("This is a test. to be replaced by index view")
 
 @ensure_csrf_cookie
 def post_page(request):
