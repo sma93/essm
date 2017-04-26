@@ -8,6 +8,18 @@ import sdbee
 def index(request):
 	return render(request, "index.html", {})
 
+def about(request):
+	return render(request, "about.html", {})
+
+def archives(request):
+	return render(request, "archives.html", {})
+
+def links(request):
+	return render(request, "links.html", {})
+
+def contact(request):
+	return render(request, "contact.html", {})
+
 @ensure_csrf_cookie
 def post_page(request):
 	return render(request, "post.html", {})
