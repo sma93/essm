@@ -12,7 +12,7 @@
         <img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
       </a>      
 				<div class="ui container">
-				<div class="ui labeled icon small menu">
+				  <div class="ui labeled icon small menu">
 						<div class="item">
 							<i class = "home icon"></i>
 							<a href="home">Home</a>
@@ -29,53 +29,57 @@
 							<i class = "usb icon"></i>
 							<a href="links">Links</a>
 						</div>
-                  <div class="item">
-                     <i class = "mail icon"></i>
-                     <a href="contact">Contact</a>
-                  </div>
+            <div class="item">
+               <i class = "mail icon"></i>
+               <a href="contact">Contact</a>
+            </div>
 					</div>
 				</div>
 		</div>
-      
-      <div class="ui container">
+    <p></p>  
+    <div class="ui container">
       <div class="ui items">
-  <div class="item">
-    <div class="image">
-      <img src="images/image-placeholder.png">
+        <div class="item">
+          <div class="image">
+            <img src="/static/essm_app/image-placeholder.png">
+          </div>
+          <div class="content">
+            <p></p><p></p> <!--TODO: change css to add margin-->
+            <a class="header">E-Sauce</a>
+            <div class="meta">
+              <span>Founded ESSM in 2017</span>
+            </div>
+            <div class="description">
+              <p>	E-Sauce is a dynamic and tasty sauce that you can add to any dish of your liking.</p>
+              <p> Check out this piece from advice slip: </p>
+              <p id='advice-section'></p>
+            </div>
+            <div class="extra">
+              Github: https://github.com/g18-es
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="/static/essm_app/image-placeholder.png">
+          </div>
+          <div class="content">
+            <p></p><p></p> <!--TODO: change css to add margin-->
+            <a class="header">Gangsta Sarah</a>
+            <div class="meta">
+              <span>Founded ESSM in 2017</span>
+            </div>
+            <div class="description">
+              <p>Gangsta Sarah can be used to smooth out wrinkles in your summer scarves.</p>
+            </div>
+            <div class="extra">
+              Github: https://github.com/sma93
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="content">
-      <a class="header">E-Sauce</a>
-      <div class="meta">
-        <span>Founded ESSM in 2017</span>
-      </div>
-      <div class="description">
-        <p>	E-Sauce is a dynamic and tasty sauce that you can add to any dish of your liking.</p>
-      </div>
-      <div class="extra">
-        Github: https://github.com/g18-es
-      </div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="image">
-      <img src="images/image-placeholder.png">
-    </div>
-    <div class="content">
-      <a class="header">Gangsta Sarah</a>
-      <div class="meta">
-        <span>Founded ESSM in 2017</span>
-      </div>
-      <div class="description">
-        <p>Gangsta Sarah can be used to smooth out wrinkles in your summer scarves.</p>
-      </div>
-      <div class="extra">
-        Github: https://github.com/sma93
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src='/static/essm_app/js/advice-api.js'></script>
 	</body>
 </html>
