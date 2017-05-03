@@ -1,79 +1,85 @@
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>ESSM - Home</title>
-		<link rel="icon" type="image/png" href="/static/essm_app/favicon.ico" sizes="16x16" />
 
-		<!-- Style -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<title>ESSM - Home</title>
+	<link rel="icon" type="image/png" href="/static/essm_app/favicon.ico" sizes="16x16" />
 
-  </head>
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/essm_app/css/write.css" -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+	<script type="text/javascript" src="/static/essm_app/js/index.js"></script>
 
-	<body>
-  	<!-- Logo -->
-		<div>
-			<a href="home">
-				<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
-			</a>
+</head>
 
-  	<!-- Content -->
-			<div class="ui container">
-				<div class="ui labeled icon small menu">
-					<div class="active teal item">
-						<i class = "home icon"></i>
-						<a href="home">Home</a>
-					</div>
-					<div class="item">
-						<i class = "folder open icon"></i>
-						<a href="archives">Archives</a>
-					</div>
-					<div class="item">
-						<i class = "heart icon"></i>
-						<a href="about">About</a>
-					</div>
-					<div class="item">
-						<i class = "usb icon"></i>
-						<a href="links">Links</a>
-					</div>
-	      </div>
+<body>
+	<!-- Logo -->
+	<div>
+		<a href="home">
+			<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
+		</a>
+
+		<!-- Content -->
+		<div class="ui container">
+			<div class="ui labeled icon small menu">
+				<div class="active teal item">
+					<i class="home icon"></i>
+					<a href="home">Home</a>
+				</div>
+				<div class="item">
+					<i class="folder open icon"></i>
+					<a href="archives">Archives</a>
+				</div>
+				<div class="item">
+					<i class="heart icon"></i>
+					<a href="about">About</a>
+				</div>
+				<div class="item">
+					<i class="usb icon"></i>
+					<a href="links">Links</a>
+				</div>
 			</div>
-	  <!-- Main Page Content-->
-			<div class="ui main text container">
-				<p></p><p></p> <!--TODO: change css to add margin-->
-				<div class="ui items">
-					<div class="item">
-						<div class="content">
-							<div class="header" id="test-header"></div>
-							<div class="description" id="test-content"></div>
-							<div class="extra" id="author-date"></div>
-						</div>
+		</div>
+		<!-- Main Page Content-->
+		<div class="ui main text container">
+			<p></p>
+			<p></p>
+			<!--TODO: change css to add margin-->
+			<div class="ui items">
+				<div class="item">
+					<div class="content">
+						<div class="header" id="test-header"></div>
+						<div class="description" id="test-content"></div>
+						<div class="extra" id="author-date"></div>
 					</div>
 				</div>
 			</div>
-			<div class="ui container">
-				<p></p>
-        <button class="massive ui button", type="button">
+		</div>
+		<div class="ui container">
+			<p></p>
+			<button class="massive ui button" type="button" id="write">
 					<i class = "comment outline icon"></i>
           <a href="post.html">Write a post</a>
         </button>
-			</div>
 		</div>
-		<script type="text/javascript">
-		$(function(){
-			$("#test").click(function(){
+	</div>
+	<!-- <script type="text/javascript">
+		$(function() {
+			$("#test").click(function() {
 				$(".test").modal('show');
 			});
 			$(".test").modal({
 				closable: true
 			});
 		});
-		$('#my-button').click(function(){
+		$('#my-button').click(function() {
 			$.post('blog_posts', function(data) {
-					console.log(data);
+				console.log(data);
 			});
 		})
+		$('#write').delay(5000).show(0);
 
 		var dummy_data = {
 			Items: [{
@@ -94,21 +100,22 @@
 		}
 		$.get('dummy', function(data) {
 			//TODO: create separate templates/urls for testing with/without actual db calls
-		//$.get('blog_posts', function(data) {
+			//$.get('blog_posts', function(data) {
 			console.log(data);
 			data = dummy_data;
 			console.log(data);
 
 			var lastModDate = data.Items["0"].Attributes["0"].Value,
-					author = data.Items["0"].Attributes["1"].Value,
-					text = data.Items["0"].Attributes["2"].Value,
-					title = data.Items["0"].Attributes["3"].Value;
+				author = data.Items["0"].Attributes["1"].Value,
+				text = data.Items["0"].Attributes["2"].Value,
+				title = data.Items["0"].Attributes["3"].Value;
 			//display get results on the page
 			//TODO: do not display rest of page until this is ready...remove jarring UI somehow
 			$('#test-header').html(title);
 			$('#test-content').html(text);
 			$('#author-date').html('author: ' + author + '</br>last mod: ' + lastModDate);
 		})
-		</script>
-	</body>
+	</script> -->
+</body>
+
 </html>
