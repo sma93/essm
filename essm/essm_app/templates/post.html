@@ -1,50 +1,52 @@
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>ESSM - Home</title>
 
-		<!-- Style -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<title>ESSM - Home</title>
 
-  </head>
-	<body>
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
 
-  	<!-- Logo -->
-		<div>
-				<a href="home">
-					<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
-				</a>
+</head>
 
-  	<!-- Content -->
-    <div class="ui container">
+<body>
+
+	<!-- Logo -->
+	<div>
+		<a href="home">
+			<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
+		</a>
+
+		<!-- Content -->
+		<div class="ui container">
 			<div class="ui labeled icon small menu">
 				<div class="active teal item">
-					<i class = "home icon"></i>
+					<i class="home icon"></i>
 					<a href="home">Home</a>
 				</div>
 				<div class="item">
-					<i class = "folder open icon"></i>
+					<i class="folder open icon"></i>
 					<a href="archives">Archives</a>
 				</div>
 				<div class="item">
-					<i class = "heart icon"></i>
+					<i class="heart icon"></i>
 					<a href="about">About</a>
 				</div>
 				<div class="item">
-					<i class = "usb icon"></i>
+					<i class="usb icon"></i>
 					<a href="links">Links</a>
 				</div>
-        <div class="item">
-					<i class = "mail icon"></i>
+				<div class="item">
+					<i class="mail icon"></i>
 					<a href="contact.html">Contact</a>
 				</div>
-      </div>
+			</div>
 		</div>
 
-	  <!-- Main Page Content-->
-    <div class="ui container">
+		<!-- Main Page Content-->
+		<div class="ui container">
 			<div class="content">
 				<div class="ui form">
 					<h4 class="ui dividing header">
@@ -62,7 +64,7 @@
 						<div class="ui checkbox">
 							<input type="checkbox" checked="checked" name="contact-me">
 							<label>Make this post public.</label>
-              <br>
+							<br>
 						</div>
 					</div>
 				</div>
@@ -70,59 +72,61 @@
 			<div class="actions">
 				<div class="ui green button">Save</div>
 				<div class="ui green button" id="submit-button">Submit</div>
-        <div class="ui button">Cancel</div>
+				<div class="ui button">Cancel</div>
 			</div>
-    </div>
-      
+		</div>
+
 		<script type="text/javascript">
-			$(function(){
-				$("#test").click(function(){
+			$(function() {
+				$("#test").click(function() {
 					$(".test").modal('show');
 				});
 				$(".test").modal({
 					closable: true
 				});
 			});
-			$('#submit-button').click(function(){
+			$('#submit-button').click(function() {
 				console.log($('#post-title').val());
 				console.log($('#post-text').val());
-				$.post("http://127.0.0.1:8000/essm_app/blog_posts", 
-						{title: $('#post-title').val(),
-						 author: "essm",
-						 text: $('#post-text').val()})
-				.done(function(data) {
-					console.log(data);
-				})
+				$.post("http://127.0.0.1:8000/essm_app/blog_posts", {
+						title: $('#post-title').val(),
+						author: "essm",
+						text: $('#post-text').val()
+					})
+					.done(function(data) {
+						console.log(data);
+					})
 			})
 
 			// from https://docs.djangoproject.com/en/1.10/ref/csrf/
 			function getCookie(name) {
-		    var cookieValue = null;
-		    if (document.cookie && document.cookie !== '') {
-		      var cookies = document.cookie.split(';');
-		        for (var i = 0; i < cookies.length; i++) {
-		          var cookie = jQuery.trim(cookies[i]);
-		          if (cookie.substring(0, name.length + 1) === (name + '=')) {
-		            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-		            break;
-		          }
-		        }
-		    }
-		    return cookieValue;
+				var cookieValue = null;
+				if (document.cookie && document.cookie !== '') {
+					var cookies = document.cookie.split(';');
+					for (var i = 0; i < cookies.length; i++) {
+						var cookie = jQuery.trim(cookies[i]);
+						if (cookie.substring(0, name.length + 1) === (name + '=')) {
+							cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+							break;
+						}
+					}
+				}
+				return cookieValue;
 			}
 			var csrftoken = getCookie('csrftoken');
 
 			function csrfSafeMethod(method) {
-			  // these HTTP methods do not require CSRF protection
-			  return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+				// these HTTP methods do not require CSRF protection
+				return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 			}
 			$.ajaxSetup({
-		    beforeSend: function(xhr, settings) {
-		      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-		        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-		      }
-		    }
+				beforeSend: function(xhr, settings) {
+					if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+						xhr.setRequestHeader("X-CSRFToken", csrftoken);
+					}
+				}
 			});
 		</script>
-	</body>
+</body>
+
 </html>
