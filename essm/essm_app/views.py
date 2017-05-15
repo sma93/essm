@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.http import HttpResponse #used for tutorial
 from django.http import JsonResponse
-import sdbee
+import sdbee, sdbee1
 
 #TODO: add views for the other static html pages (about, archive etc)
 def index(request):
@@ -34,3 +34,10 @@ def blog_posts(request):
 def dummy(request):
 	d = {'test': 'fake'}
 	return JsonResponse(d);
+
+def comments(request):
+	if(request.method == "COMMENT"):
+		resp1 = sdbee1.save_post(request.COMMENT.get('text'))
+	else:
+		resp1 = sdbee1.get_posts()
+	return JsonResponse(resp1)

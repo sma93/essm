@@ -13,4 +13,5 @@ urlpatterns = [
 	url(r'^about', views.about),
 	url(r'^links', views.links),
 	url(r'^contact', views.contact),
+	url(r'^comments', views.comments),
 ] + staticfiles_urlpatterns()

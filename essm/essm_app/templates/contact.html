@@ -1,51 +1,17 @@
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<title>ESSM - Home</title>
-
-	<!-- Style -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
-
-</head>
+{% extends "header.html" %}
+{% block unique %}
+<script type="text/javascript" src="/static/essm_app/js/contact.js"></script>
+<script type="text/javascript" src="/static/essm_app/js/comment.js"></script>
+{% endblock %}
+{% block content %}
 
 <body>
 
-	<!-- Logo -->
-	<div>
-		<a href="home">
-			<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
-		</a>
-
-		<!-- Content -->
-		<div class="ui container">
-			<div class="ui labeled icon small menu">
-				<div class="item">
-					<i class="home icon"></i>
-					<a href="home">Home</a>
-				</div>
-				<div class="item">
-					<i class="folder open icon"></i>
-					<a href="archives">Archives</a>
-				</div>
-				<div class="item">
-					<i class="heart icon"></i>
-					<a href="about">About</a>
-				</div>
-				<div class="item">
-					<i class="usb icon"></i>
-					<a href="links">Links</a>
-				</div>
-				<div class="active teal item">
-					<i class="mail icon"></i>
-					<a href="contact">Contact</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<!-- Content -->
+	{% include "menu.html" %}
+	<br>
+	<br>
 	<!-- Main Page Content-->
 	<div class="ui container">
 		<button class="ui button" , type="button" , id="test">
@@ -70,24 +36,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		$(function() {
-			$("#test").click(function() {
-				$(".test").modal('show');
-			});
-			$(".test").modal({
-				closable: true
-			});
-		});
-		$('#my-button').click(function() {
-			//.getJSON('http://127.0.0.1:5000/blog_posts', function(data) {
-			//console.log(data);
-			//});
-		})
-	</script>
-
-
-
 </body>
-
+{% endblock %}
 </html>

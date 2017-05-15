@@ -40,6 +40,7 @@ $.get('dummy', function(data) {
   //$.get('blog_posts', function(data) {
   console.log(data);
   data = dummy_data;
+  //data = data;
   console.log(data);
 
   var lastModDate = data.Items["0"].Attributes["0"].Value,

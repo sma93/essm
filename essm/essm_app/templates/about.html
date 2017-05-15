@@ -1,152 +1,157 @@
 <html>
-	<head>
-		<!--meta tags and semantic/css style refs-->
-		<meta charset="utf-8">
-		<title>ESSM - About</title>
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/essm_app/css/about.css">
-	</head>
-	<body>
-		<div>
-      <a href="home">
-        <img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
-      </a>
-				<div class="ui container">
-				  <div class="ui labeled icon small menu">
-						<div class="item">
-							<i class = "home icon"></i>
-							<a href="home">Home</a>
+
+<head>
+	<!--meta tags and semantic/css style refs-->
+	<meta charset="utf-8">
+	<title>ESSM - About</title>
+	<!-- Style -->
+	<link rel="icon" type="image/png" href="/static/essm_app/favicon.ico" sizes="16x16" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/essm_app/css/about.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+	<script src='/static/essm_app/js/advice-api.js'></script>
+</head>
+
+<body>
+	<div>
+		<a href="home">
+			<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
+		</a>
+		<div class="ui container">
+			<div class="ui labeled icon small menu">
+				<div class="item">
+					<i class="home icon"></i>
+					<a href="home">Home</a>
+				</div>
+				<div class="item">
+					<i class="folder open icon"></i>
+					<a href="archives">Archives</a>
+				</div>
+				<div class="active teal item">
+					<i class="heart icon"></i>
+					<a href="about">About</a>
+				</div>
+				<div class="item">
+					<i class="usb icon"></i>
+					<a href="links">Links</a>
+				</div>
+				<div class="item">
+					<i class="mail icon"></i>
+					<a href="contact">Contact</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<p></p>
+	<div class="ui container">
+		<div class="ui items">
+			<div class="item">
+				<div class="ui image">
+					<div class="ui teal ribbon label">
+						Edna
+					</div>
+					<!--img src="/static/essm_app/image-placeholder.png"-->
+					<img src="/static/essm_app/eae.jpg">
+				</div>
+				<div class="content">
+					<div class="ui top attached tabular menu">
+						<a class="active item" data-tab="first">Intro</a>
+						<a class="item" data-tab="second">Connect</a>
+						<a class="item" data-tab="third">Advice</a>
+						<a class="item" data-tab="fourth">Extra</a>
+					</div>
+					<div class="ui bottom attached active tab segment" data-tab="first">
+						<div class="content">
+							<span class="ui header">Hey, it's edna :)</span>
+							<div class="description">
+								<p>[aka ernie, e-money, or big jefe]</p>
+								<p>I like coding and nicknaming. I'm hoping that this cool project will allow me to practice both.</p>
+								<p>In case you're wondering, Sarah and I, my bff-homie-g-gangsta Sarah and I, are the original project's crew. In its entirety. OPCs! O-level execs. Big shot titles, nailed it.</p>
+							</div>
 						</div>
-						<div class="item">
-							<i class = "folder open icon"></i>
-							<a href="archives">Archives</a>
+					</div>
+					<div class="ui bottom attached tab segment" data-tab="second">
+						<a class="ui header" href="https://github.com/g18-es">
+							<i class="github alternate icon"></i>
+							<div class="content">github</div>
+						</a>
+						<br />
+						<a class="ui header" href="https://www.hackerrank.com/swagBomb">
+							<i class="code icon"></i>
+							<div class="content">hackerrank</div>
+						</a>
+					</div>
+					<div class="ui bottom attached tab segment" data-tab="third">
+						<div class="description">
+							<p> Check out this piece from advice slip: </p>
+							<p id='advice-section'></p>
 						</div>
-						<div class="active teal item">
-							<i class = "heart icon"></i>
-							<a href="about">About</a>
+					</div>
+					<div class="ui bottom attached tab segment" data-tab="fourth">
+						<div class="description">
+							<p>Until I decide what goes here, the tab's title will be short for extraneous.</p>
+							<p>And possibly even after that.</p>
 						</div>
-						<div class="item">
-							<i class = "usb icon"></i>
-							<a href="links">Links</a>
-						</div>
-            <div class="item">
-               <i class = "mail icon"></i>
-               <a href="contact">Contact</a>
-            </div>
 					</div>
 				</div>
 			</div>
 		</div>
-    <p></p>
-    <div class="ui container">
-      <div class="ui items">
-        <div class="item">
-          <div class="ui image">
-            <div class="ui teal ribbon label">
-              Edna
-            </div>
-            <!--img src="/static/essm_app/image-placeholder.png"-->
-            <img src="/static/essm_app/eae.jpg">
-          </div>
-          <div class="content">
-            <div class="ui top attached tabular menu">
-              <a class="active item" data-tab="first">Intro</a>
-              <a class="item" data-tab="second">Connect</a>
-              <a class="item" data-tab="third">Advice</a>
-              <a class="item" data-tab="fourth">Extra</a>
-            </div>
-            <div class="ui bottom attached active tab segment" data-tab="first">
-              <div class="content">
-                <span class="ui header">Hey, it's edna :)</span>
-                <div class="description">
-                  <p>[aka ernie, e-money, or big jefe]</p>
-                  <p>I like coding and nicknaming. I'm hoping that this cool project will allow me to practice both.</p>
-                  <p>In case you're wondering, Sarah and I, my bff-homie-g-gangsta Sarah and I, are the original project's crew. In its entirety. OPCs! O-level execs. Big shot titles, nailed it.</p>
-                </div>
-              </div>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="second">
-              <a class="ui header" href="https://github.com/g18-es">
-                <i class="github alternate icon"></i>
-                <div class="content">github</div>
-              </a>
-              <br />
-              <a class="ui header" href="https://www.hackerrank.com/swagBomb">
-                <i class="code icon"></i>
-                <div class="content">hackerrank</div>
-              </a>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="third">
-              <div class="description">
-                  <p> Check out this piece from advice slip: </p>
-                  <p id='advice-section'></p>
-              </div>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="fourth">
-              <div class="description">
-                <p>Until I decide what goes here, the tab's title will be short for extraneous.</p>
-                <p>And possibly even after that.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ui items">
-        <div class="item">
-          <div class="ui image">
-            <div class="ui teal ribbon label">
-              Sarah
-            </div>
-            <!--img src="/static/essm_app/image-placeholder.png"-->
-            <img src="/static/essm_app/sae.jpg">
-          </div>
-          <div class="content">
-            <div class="ui top attached tabular menu">
-              <a class="active item" data-tab="one">Intro</a>
-              <a class="item" data-tab="two">Connect</a>
-              <a class="item" data-tab="three">Advice</a>
-              <a class="item" data-tab="four">Check this out!</a>
-            </div>
-            <div class="ui bottom attached active tab segment" data-tab="one">
-              <div class="content">
-                <span class="ui header">Gangsta Sarah, in da house!</span>
-                <div class="description">
-                  <p>[just kidding sarah. do this section however you like]</p>
-                  <p>Modern day Bonnie Parker? yes
-                  <br />Gangsta to the death? Uh, yes
-                  <br />Is she really worldwide? Uh, yes!</p>
-                </div>
-              </div>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="two">
-              <a class="ui header" href="https://github.com/sma93">
-                <i class="github alternate icon"></i>
-                <div class="content">github</div>
-              </a>
-              <br />
-              <a class="ui header" href="">
-                <i class="code icon"></i>
-                <div class="content">and the rest of your stuff</div>
-              </a>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="three">
-              <div class="description">
-                  <p> Check out this piece from advice slip: </p>
-                  <p id='advice-section-2'></p>
-              </div>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="four">
-              <div class="description">
-                <p>Whatever you like goes here.</p>
-                <p>Or not, up to you.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
-    <script src='/static/essm_app/js/advice-api.js'></script>
-	</body>
+		<div class="ui items">
+			<div class="item">
+				<div class="ui image">
+					<div class="ui teal ribbon label">
+						Sarah
+					</div>
+					<!--img src="/static/essm_app/image-placeholder.png"-->
+					<img src="/static/essm_app/sae.jpg">
+				</div>
+				<div class="content">
+					<div class="ui top attached tabular menu">
+						<a class="active item" data-tab="one">Intro</a>
+						<a class="item" data-tab="two">Connect</a>
+						<a class="item" data-tab="three">Advice</a>
+						<a class="item" data-tab="four">Check this out!</a>
+					</div>
+					<div class="ui bottom attached active tab segment" data-tab="one">
+						<div class="content">
+							<span class="ui header">Gangsta Sarah, in da house!</span>
+							<div class="description">
+								<p>[just kidding sarah. do this section however you like]</p>
+								<p>Modern day Bonnie Parker? yes
+									<br />Gangsta to the death? Uh, yes
+									<br />Is she really worldwide? Uh, yes!</p>
+							</div>
+						</div>
+					</div>
+					<div class="ui bottom attached tab segment" data-tab="two">
+						<a class="ui header" href="https://github.com/sma93">
+							<i class="github alternate icon"></i>
+							<div class="content">github</div>
+						</a>
+						<br />
+						<a class="ui header" href="">
+							<i class="code icon"></i>
+							<div class="content">and the rest of your stuff</div>
+						</a>
+					</div>
+					<div class="ui bottom attached tab segment" data-tab="three">
+						<div class="description">
+							<p> Check out this piece from advice slip: </p>
+							<p id='advice-section-2'></p>
+						</div>
+					</div>
+					<div class="ui bottom attached tab segment" data-tab="four">
+						<div class="description">
+							<p>Whatever you like goes here.</p>
+							<p>Or not, up to you.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
