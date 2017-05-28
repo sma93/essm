@@ -1,50 +1,14 @@
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<title>ESSM - Home</title>
-	<!-- Style -->
-	<link rel="icon" type="image/png" href="/static/essm_app/favicon.ico" sizes="16x16" />
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/essm_app/css/write.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
-	<script type="text/javascript" src="/static/essm_app/js/index.js"></script>
-
-</head>
-
+{% extends "header.html" %}
+{% block unique %}
+<link rel="stylesheet" type="text/css" href="/static/essm_app/css/write.css">
+<script type="text/javascript" src="/static/essm_app/js/index.js"></script>
+{% endblock %}
+{% block content %}
 <body>
-	<!-- Logo -->
-	<div>
-		<a href="home">
-			<img src="/static/essm_app/letters.svg" alt="logo image" width="75" height="45">
-		</a>
 
-		<!-- Content -->
-		<div class="ui container">
-			<div class="ui labeled icon small menu">
-				<div class="active teal item">
-					<i class="home icon"></i>
-					<a href="home">Home</a>
-				</div>
-				<div class="item">
-					<i class="folder open icon"></i>
-					<a href="archives">Archives</a>
-				</div>
-				<div class="item">
-					<i class="heart icon"></i>
-					<a href="about">About</a>
-				</div>
-				<div class="item">
-					<i class="usb icon"></i>
-					<a href="links">Links</a>
-				</div>
-				<div class="item">
-					<i class="mail icon"></i>
-					<a href="contact">Contact</a>
-				</div>
-			</div>
-		</div>
+	<!-- Content -->
+	{% include "menu.html" %}
 		<!-- Main Page Content-->
 		<div class="ui main text container">
 			<p></p>
@@ -120,5 +84,5 @@
 		})
 	</script> -->
 </body>
-
+{% endblock %}
 </html>
