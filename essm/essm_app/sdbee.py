@@ -10,7 +10,7 @@ client = boto3.client('sdb')
 #add function to delete domain by name
 #in test script, add a fucntion that calls the above in sequence
 
-def sdb_blog_posts():
+def sdb_blog_posts(): #TODO update name to reflect that this gets metadata
 	response = client.domain_metadata(
 		DomainName='blog_posts'
 	)

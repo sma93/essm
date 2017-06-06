@@ -24,6 +24,7 @@ def contact(request):
 def post_page(request):
 	return render(request, "post.html", {})
 
+# TODO: clearer name would be blog_content, or articles
 def blog_posts(request):
 	if(request.method == "POST"):
 		resp = sdbee.save_post(request.POST.get('title'), request.POST.get('author'), request.POST.get('text'))
