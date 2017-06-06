@@ -1,22 +1,22 @@
 <div class="ui container">
   <div class="ui labeled icon small menu">
-    <div class="item">
+    <div  {% if request.path == '/essm_app/home' %}class="active teal item"{% endif %} class="item">
       <i class="home icon"></i>
       <a href="home">Home</a>
     </div>
-    <div class="item">
+    <div  {% if request.path == '/essm_app/archives' %}class="active teal item"{% endif %} class="item">
       <i class="folder open icon"></i>
       <a href="archives">Archives</a>
     </div>
-    <div class="item">
+    <div  {% if request.path == '/essm_app/about' %}class="active teal item"{% endif %} class="item">
       <i class="heart icon"></i>
       <a href="about">About</a>
     </div>
-    <div class="item">
+    <div  {% if request.path == '/essm_app/links' %}class="active teal item"{% endif %} class="item">
       <i class="usb icon"></i>
       <a href="links">Links</a>
     </div>
-    <div class="active teal item">
+    <div  {% if request.path == '/essm_app/contact' %}class="active teal item"{% endif %} class="item">
       <i class="mail icon"></i>
       <a href="contact">Contact</a>
     </div>
